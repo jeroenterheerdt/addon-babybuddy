@@ -11,7 +11,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
   echo "**** install build packages ****" && \
   apk add --no-cache --virtual=build-dependencies \
-    build-base \
+  #  build-base \
+    gcc \
     curl \
     jpeg-dev \
     libffi-dev \
