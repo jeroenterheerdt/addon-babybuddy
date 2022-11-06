@@ -1,6 +1,7 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.2.3
 # hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+#FROM ${BUILD_FROM}
+FROM alpine:3.14
 
 VOLUME ["/run"]
 
