@@ -10,17 +10,17 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003
 RUN \
   echo "**** install build packages ****" && \
-  apk add --no-cache --virtual=build-dependencies \
+  #apk add --no-cache --virtual=build-dependencies \
   #  build-base \
-    gcc \
-    curl \
-    jpeg-dev \
-    libffi-dev \
-    libxml2-dev \
-    libxslt-dev \
-    postgresql-dev \
-    python3-dev \
-    zlib-dev
+  apk add --no-cache --virtual=build-dependencies gcc
+RUN apk add --no-cache --virtual=build-dependencies curl 
+RUN apk add --no-cache --virtual=build-dependencies jpeg-dev
+RUN apk add --no-cache --virtual=build-dependencies libffi-dev
+RUN apk add --no-cache --virtual=build-dependencies libxml2-dev
+RUN apk add --no-cache --virtual=build-dependencies libxslt-dev
+RUN apk add --no-cache --virtual=build-dependencies postgresql-dev
+RUN apk add --no-cache --virtual=build-dependencies python3-dev
+RUN apk add --no-cache --virtual=build-dependencies zlib-dev
 
 # hadolint ignore=DL3003
 RUN \
