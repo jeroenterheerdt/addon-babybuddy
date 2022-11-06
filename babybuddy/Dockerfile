@@ -8,6 +8,7 @@ VOLUME ["/run"]
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.14/main' >> /etc/apk/repositories
+RUN apk update
 # hadolint ignore=DL3003
 RUN \
   echo "**** install build packages ****" && \
